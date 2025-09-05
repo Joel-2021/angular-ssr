@@ -29,10 +29,10 @@
   <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png"/>
   <meta name="apple-mobile-web-app-title" content="ChottuLink"/>
   <link rel="manifest" href="site.webmanifest"/>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link
     href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&display=swap"
-    rel="stylesheet">
+    rel="stylesheet"  media="print" onload="this.media='all'">
 </head>
 
 <body class="mat-typography">
@@ -41,8 +41,8 @@
 <!--<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>-->
 
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-BW04HM25XP"></script>
-<script>
+<script defer src="https://www.googletagmanager.com/gtag/js?id=G-BW04HM25XP"></script>
+<script defer>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
@@ -51,21 +51,21 @@
 </script>
 
 <!--chat-->
-<!--<script async>-->
-<!--window.chatwootSettings = {"position":"right","type":"expanded_bubble","launcherTitle":"Chat with us"};-->
-<!--  (function (d, t) {-->
-<!--    var BASE_URL = "https://support-01.chottulink.com";-->
-<!--    var g = d.createElement(t), s = d.getElementsByTagName(t)[0];-->
-<!--    g.src = BASE_URL + "/packs/js/sdk.js";-->
-<!--    g.defer = true;-->
-<!--    g.async = true;-->
-<!--    s.parentNode.insertBefore(g, s);-->
-<!--    g.onload = function () {-->
-<!--      window.chatwootSDK.run({-->
-<!--        websiteToken: 'WC1C5x1mHfuU7fXgmEnaFegt',-->
-<!--        baseUrl: BASE_URL-->
-<!--      })-->
-<!--    }-->
-<!--  })(document, "script");-->
-<!--</script>-->
+<script defer>
+window.chatwootSettings = {"position":"right","type":"expanded_bubble","launcherTitle":"Chat with us"};
+  (function (d, t) {
+    var BASE_URL = "https://support-01.chottulink.com";
+    var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
+    g.src = BASE_URL + "/packs/js/sdk.js";
+    g.defer = true;
+    g.async = true;
+    s.parentNode.insertBefore(g, s);
+    g.onload = function () {
+      window.chatwootSDK.run({
+        websiteToken: 'WC1C5x1mHfuU7fXgmEnaFegt',
+        baseUrl: BASE_URL
+      })
+    }
+  })(document, "script");
+</script>
 </html>
