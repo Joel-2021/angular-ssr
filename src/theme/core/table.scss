@@ -1,0 +1,98 @@
+@use "../globals" as *;
+
+.table-wrapper {
+  overflow-x: auto;
+  background: $app-bg-primary;
+  border-radius: 15px;
+}
+
+.table {
+  min-width: 100%;
+  background-color: transparent !important;
+
+  > :not(caption) > * > * {
+    border: none;
+  }
+
+  thead {
+    tr {
+      background: linear-gradient(
+          269.61deg,
+          #3369c5 -8.08%,
+          #f318ff 66.81%,
+          #ff9d00 137.47%
+      );
+      border-radius: 18px 18px 0 0;
+
+      th {
+        width: 33%;
+        background: transparent !important;
+        font-family: "Poppins", sans-serif;
+        font-weight: 700;
+        color: $app-text-primary;
+        text-align: center;
+        vertical-align: middle;
+        white-space: nowrap;
+
+        &:first-child {
+          border-top-left-radius: 18px;
+
+          @media screen and (max-width: 768px) {
+            background: linear-gradient(
+                269.61deg,
+                #3369c5 -8.08%,
+                #f318ff 0%,
+            ) !important;
+          }
+
+        }
+
+        &:last-child {
+          border-top-right-radius: 18px;
+        }
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      font-family: "Poppins", sans-serif;
+      background-color: $app-bg-primary;
+
+      &:first-child {
+        background-color: $card-bg-primary;
+        font-weight: bold;
+      }
+
+      td {
+        text-align: center;
+        vertical-align: middle;
+        white-space: nowrap;
+        background-color: inherit;
+
+        &:not(:last-child) {
+          border-right: 1px solid #003950;
+        }
+      }
+    }
+  }
+
+  tr {
+    th,
+    td {
+      text-align: center;
+      vertical-align: middle;
+      white-space: nowrap;
+      background-color: transparent;
+      height: 60px;
+    }
+
+    th:first-child,
+    td:first-child {
+
+      @media screen and (max-width: 768px) {
+        background-color: $app-bg-primary;
+      }
+    }
+  }
+}

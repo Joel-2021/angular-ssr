@@ -13,6 +13,24 @@ html {
     typography: "Poppins",
     density: -2
   ));
+
+  @include mat.slider-overrides((
+    handle-height: 20px,
+    handle-width: 35px,
+    active-track-height: 20px,
+    inactive-track-height: 20px,
+    active-track-color: '#9f9fa1',
+    inactive-track-color: '#333437',
+    handle-color: 'white',
+    ripple-color: 'white',
+    focus-handle-color: 'white',
+    hover-state-layer-color: 'transparent',
+    focus-state-layer-color: 'transparent',
+    value-indicator-height: '2.2rem',
+    value-indicator-width: '2.2rem',
+    label-container-color: 'white',
+    //label-label-text-color: 'white',
+  ));
 }
 
 .mat-mdc-form-field {
@@ -22,4 +40,33 @@ html {
 
 .mdc-notched-outline__notch {
   border-right-style: hidden;
+}
+
+.mat-mdc-tooltip::before {
+  z-index: 1;
+  background: transparent;
+  width: 0;
+  height: 0;
+  //border-left: 7px solid transparent;
+  //border-right: 7px solid transparent;
+  //border-top: 7px solid #e5dff7;
+  //bottom: -7px !important;
+  //top: unset !important;
+  //left: unset !important;
+  //right: 55px !important;
+
+  @media (min-width: 768px) {
+    border-top: 7px solid transparent;
+    border-left: none;
+    border-bottom: 7px solid transparent;
+    border-right: 7px solid #e5dff7;
+    top: 50% !important;
+    transform: translateY(-50%);
+    left: -6px !important;
+  }
+}
+
+.mat-mdc-tooltip-surface {
+  background-color: #e5dff7;
+  max-width: 320px !important;
 }

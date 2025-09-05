@@ -12,7 +12,8 @@
 @use "./core/header.scss";
 @use "./core/no-content.scss";
 @use "./core/home.scss";
-
+@use "./core/table.scss";
+@use "./core/slider.scss";
 
 app-root {
   opacity: 0;
