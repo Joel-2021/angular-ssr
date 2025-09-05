@@ -19,6 +19,13 @@ export const routes: Routes = [
         }
       },
       {
+        path: 'about-us',
+        loadComponent: () => import('./pages/about-us/about-us.component').then((c) => c.AboutUsComponent),
+        data: {
+          breadcrumb: 'About Us'
+        }
+      },
+      {
         path: 'legal',
         redirectTo: AppRoutes.TERMS_OF_USE,
         pathMatch: 'full'

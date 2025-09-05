@@ -1,4 +1,5 @@
 import { Component, OnDestroy } from '@angular/core';
+import { MatButton } from '@angular/material/button';
 import { FormatNumberPipe } from "../../pipes/format-number.pipe";
 import { IconComponent } from "../../components/icon/icon.component";
 import { MatProgressSpinner } from '@angular/material/progress-spinner';
@@ -16,7 +17,7 @@ import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-pricing',
-  imports: [ IconComponent, FormatNumberPipe, MatProgressSpinner, RouterModule, NoContentComponent, GetStartedCardComponent ],
+  imports: [ IconComponent, FormatNumberPipe, MatProgressSpinner, RouterModule, NoContentComponent, GetStartedCardComponent, MatButton ],
   templateUrl: './pricing.component.html',
   styleUrl: './pricing.component.scss'
 })

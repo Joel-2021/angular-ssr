@@ -13,13 +13,14 @@
   font-family: "Quicksand", sans-serif;
   padding: 1.5rem;
   width: 100%;
-  max-width: 20rem;
+  max-width: 23rem;
   animation: fadeInUp 1s both;
   display: flex;
   flex-direction: column;
   position: relative;
   z-index: 1;
   text-align: start;
+  min-height: 600px;
 
   &::after {
     opacity: 0;
@@ -38,7 +39,7 @@
     mask-composite: exclude;
     -webkit-mask-composite: destination-out;
     transition: opacity 0.3s ease;
-    animation: spin 5s linear infinite;
+    animation: spin-border 5s linear infinite;
   }
 
   &:hover::after {
@@ -94,6 +95,11 @@
 
     .card-details {
       gap: 0.5rem;
+
+      .card-description {
+
+        color: $app-text-secondary;
+      }
     }
   }
 
@@ -138,6 +144,14 @@
       font-style: italic;
       font-weight: 600;
       margin-bottom: 0;
+      color: $app-text-secondary;;
+    }
+  }
+
+  .card-footer {
+
+    button {
+      height: 45px !important;
     }
   }
 
@@ -172,7 +186,7 @@
 
 
 // Animations
-@keyframes spin {
+@keyframes spin-border {
   0% {
     --angle: 0deg;
   }

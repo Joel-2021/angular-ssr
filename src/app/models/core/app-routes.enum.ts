@@ -1,6 +1,7 @@
 export enum AppRoutes {
 
   HOME = '/home',
+  ABOUT_US = '/about-us',
   WHY_CHOTTULINK = '/why-chottulink',
   FEATURES = '/features',
   PRICING = '/pricing',
