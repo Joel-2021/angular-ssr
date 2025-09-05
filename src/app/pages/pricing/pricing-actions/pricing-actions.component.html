@@ -1,0 +1,71 @@
+<div mat-dialog-title class="dialog-header">
+    <div class="dialog-wrapper">
+        <div class="dialog-title">Contact Us</div>
+        <div class="dialog-desc">Please fill out the form below and we'll get in touch with you.</div>
+    </div>
+      <button mat-icon-button class="btn-light" [mat-dialog-close]="null">
+    <icon src="./assets/images/icons/close.svg" [size]="40"/>
+  </button>
+</div>
+
+<div mat-dialog-content class="dialog-content">
+    <form class="py-4" autocapitalize="off" autocomplete="off" #Contact="ngForm">
+        <mat-form-field appearance="outline" class="mb-3">
+            <mat-label>Name</mat-label>
+
+            <input matInput name="name" type="text" maxlength="60" [(ngModel)]="name" required #CompanyName="ngModel" />
+
+            @if (CompanyName.hasError('required')) {
+            <mat-error>
+                Name is <strong>required</strong>
+            </mat-error>
+            }
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="mb-3">
+            <mat-label>Email Address</mat-label>
+
+            <input matInput name="user-email-address" type="email" maxlength="60"
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" [(ngModel)]="email" required
+                #EmailAddress="ngModel" />
+
+
+            @if (EmailAddress.hasError('required')) {
+            <mat-error>
+                Email Address is <strong>required</strong>
+            </mat-error>
+            }
+
+            @if (EmailAddress.hasError('pattern')) {
+            <mat-error>
+                Enter a <strong>valid</strong> email address
+            </mat-error>
+            }
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Company Phone Number</mat-label>
+
+            <input matInput name="company-phone" type="tel" maxlength="10"
+                pattern="^\+?(\d{1,3})?[-.\s]?(\(?\d{3}\)?)[-.\s]?(\d{3})[-.\s]?(\d{4})$" [(ngModel)]="phone" required
+                #CompanyPhone="ngModel" />
+
+            @if (CompanyPhone.hasError('required')) {
+            <mat-error>
+                Company Phone Number is <strong>required</strong>
+            </mat-error>
+            }
+
+            @if (CompanyPhone.hasError('pattern')) {
+            <mat-error>
+                Enter <strong>valid</strong> Company Phone Number.
+            </mat-error>
+            }
+        </mat-form-field>
+    </form>
+</div>
+
+<div mat-dialog-actions class="dialog-actions">
+    <button mat-flat-button type="button" class="btn-gradient shimmer animate" [mat-dialog-close]="true"
+            [disabled]="!Contact.form.valid" (click)="handleSubmit()">
+        Submit
+    </button>
+</div>

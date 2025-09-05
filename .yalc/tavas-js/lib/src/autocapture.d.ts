@@ -1,0 +1,23 @@
+import RageClick from './extensions/rageclick';
+import { AutocaptureConfig, AutoCaptureCustomProperty, DecideResponse, Properties } from './types';
+import { Tavas } from './posthog-core';
+declare const autocapture: {
+    _initializedTokens: string[];
+    _previousElementSibling: (el: Element) => Element | null;
+    _getPropertiesFromElement: (elem: Element, maskInputs: boolean, maskText: boolean) => Properties;
+    _getDefaultProperties: (eventType: string) => Properties;
+    _extractCustomPropertyValue: (customProperty: AutoCaptureCustomProperty) => string;
+    _getCustomProperties: (targetElementList: Element[]) => Properties;
+    _getEventTarget: (e: Event) => Element | null;
+    _captureEvent: (e: Event, instance: Tavas) => boolean | void;
+    _navigate: (href: string) => void;
+    _addDomEventHandlers: (instance: Tavas) => void;
+    _customProperties: AutoCaptureCustomProperty[];
+    rageclicks: RageClick | null;
+    config: AutocaptureConfig | undefined;
+    init: (instance: Tavas) => void;
+    afterDecideResponse: (response: DecideResponse, instance: Tavas) => void;
+    enabledForProject: (token: string | null | undefined, numBuckets: number, numEnabledBuckets: number) => boolean;
+    isBrowserSupported: () => boolean;
+};
+export { autocapture };

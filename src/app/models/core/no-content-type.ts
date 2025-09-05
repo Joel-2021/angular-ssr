@@ -1,0 +1,9 @@
+export enum NoContentType {
+
+  DEFAULT = 'DEFAULT',
+  DASHBOARD = 'DASHBOARD',
+  COMING_SOON = 'COMING_SOON',
+  LINKS = 'LINKS',
+  FAQ = 'FAQ',
+  ANALYTICS = 'ANALYTICS'
+}

@@ -1,0 +1,61 @@
+@use 'notyf/notyf.min.css';
+@use '../globals' as *;
+
+.notyf {
+
+  .notyf__toast {
+    padding: 0 24px;
+    max-width: 360px;
+    border-radius: 0.475rem;
+
+    &.notyf__toast--dismissible {
+
+      .notyf__wrapper {
+        padding-right: 35px;
+      }
+    }
+
+    .notyf__wrapper {
+
+      .notyf__icon {
+        width: auto;
+        margin-right: 20px;
+      }
+
+      .notyf__message {
+
+        .notyf__title {
+          font-weight: 700;
+          margin-bottom: 10px;
+          color: white;
+        }
+
+        .notyf__description {
+          font-size: 0.9375rem;
+          font-weight: 500;
+          margin-bottom: 0;
+          color: white;
+        }
+      }
+
+      .notyf__dismiss {
+        width: 40px;
+        margin-right: -25px;
+
+        .notyf__dismiss-btn::after,
+        .notyf__dismiss-btn::before {
+          height: 15px;
+          width: 3px;
+        }
+      }
+    }
+
+    .notyf__ripple {
+
+      height: 100%;
+      border-radius: 0;
+      transform: none;
+      animation: none;
+    }
+  }
+}

@@ -1,0 +1,49 @@
+@use "../globals" as *;
+
+.mat-mdc-dialog-container {
+  padding: 0;
+
+  .mdc-dialog__surface {
+    border-radius: 12px;
+    background: linear-gradient(to bottom, #3a5f6c, #021620);
+  }
+
+  .mat-mdc-dialog-title,
+  .dialog-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+
+    .dialog-wrapper {
+      margin-right: auto;
+      line-height: normal;
+
+      .dialog-title {
+        font-size: 20px;
+        font-weight: 600;
+        text-transform: capitalize;
+        margin-bottom: 5px;
+        color: $app-text-primary;
+      }
+
+      .dialog-desc {
+        font-size: 1rem;
+        color: $app-text-primary;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .dialog-content {
+    padding:10px 20px !important;
+
+  }
+
+  .dialog-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+  }
+}

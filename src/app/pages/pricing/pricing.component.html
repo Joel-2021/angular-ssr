@@ -1,0 +1,134 @@
+<section class="text-center md:mt-40 mt-30 hero-section">
+  <h1 class="text-3xl sm:text-5xl font-bold">Clear, Upfront Pricing</h1>
+  <p class="mt-4 mb-6 font-light text-lg sm:text-xl mb-10">No hidden fees, no gimmicks—just transparent pricing
+    and
+    unbeatable
+    value.</p>
+
+  <div>
+    @if (spinner) {
+      <div class="w-full h-full flex items-center justify-center">
+        <mat-spinner></mat-spinner>
+      </div>
+    } @else if (subscriptionPackages.length > 0) {
+
+      <div id="card-container"
+           class="flex flex-col sm:flex-row flex-wrap gap-6 md:items-stretch items-center justify-center">
+        @for (subscription of subscriptionPackages; track subscription.id; let index = $index; ) {
+          <div class="card card-subscribe">
+            <div class="card-header">
+              <div class="icon icon-pack" [class.icon-pack-advance]="index > 1">
+                @if (index === 0) {
+
+                  <icon src="./assets/images/icons/sparkle.svg" [size]="30"/>
+
+                } @else if (index === 1) {
+
+                  <icon src="./assets/images/icons/pattern.svg" [size]="30" style="transform: rotate(45deg);"/>
+
+                } @else {
+
+                  <icon src="./assets/images/icons/pattern.svg" [size]="30"/>
+                }
+              </div>
+
+              <div class="card-details">
+                <h5 class="card-title">
+                  {{ subscription?.title || '---' }}
+                </h5>
+
+                <p class="card-description">
+                  {{ subscription?.description || '---' }}
+                </p>
+              </div>
+
+              <div class="card-price">
+                <h3 class="card-price-value">
+                  {{ subscription?.currency?.symbol ?? '' }} {{ subscription?.listedPrice ?? '0' }}
+                </h3>
+
+                <p class="card-price-label">
+                  Under {{ (subscription.mau | formatNumber) || '---' }} Monthly Active Users </p>
+              </div>
+            </div>
+
+            <div class="card-body">
+              <h6 class="mb-0">Features</h6>
+
+              <hr>
+
+              <ul class="list-unstyled">
+                @for (benefit of subscription?.packBenefits; track benefit) {
+                  <li>
+                    {{ benefit || '---' }}
+                  </li>
+                }
+              </ul>
+            </div>
+
+            <div class="card-footer">
+              <button mat-flat-button class="btn-fill" (click)="navigateToChottuLink()">
+                Get Started
+              </button>
+
+            </div>
+          </div>
+        }
+        <div class="card card-subscribe">
+          <div class="card-header">
+            <div class="icon icon-pack icon-pack-advance">
+
+              <icon src="./assets/images/icons/pattern.svg" [size]="30"/>
+            </div>
+
+            <div class="card-details">
+              <h5 class="card-title">
+                Enterprise
+              </h5>
+
+              <p class="card-description">
+                Contact sales for pricing
+              </p>
+            </div>
+
+            <div class="card-price">
+              <h3 class="card-price-value">
+                Custom Pricing
+              </h3>
+
+              <p class="card-price-label">
+                over {{
+                  (subscriptionPackages[subscriptionPackages.length - 1].mau | formatNumber) || '---'
+                }}
+                Monthly Active Users </p>
+            </div>
+          </div>
+
+          <div class="card-body">
+            <h6 class="mb-0">Features</h6>
+
+            <hr>
+
+            <ul class="list-unstyled">
+              <li>
+                ✅ Over 500K MAU Supported
+              </li>
+              <li>✅ All Scale features</li>
+              <li>✅ Priority support</li>
+            </ul>
+          </div>
+
+          <div class="card-footer">
+            <button mat-flat-button class="btn-fill" (click)="openContactUsDialog()">
+              Contact Sales
+            </button>
+          </div>
+        </div>
+      </div>
+    } @else {
+      <no-content/>
+    }
+  </div>
+
+  <app-get-started-card/>
+</section>

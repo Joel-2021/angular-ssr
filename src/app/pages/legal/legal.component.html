@@ -1,0 +1,17 @@
+@if (spinner) {
+
+  <div class="spinner-container">
+    <mat-spinner />
+  </div>
+
+} @else {
+  @if (clientContent?.content !== null && clientContent?.content) {
+
+    <div [innerHTML]="clientContent?.content || ''" class="client-content"></div>
+
+  } @else {
+
+    <no-content/>
+  }
+}
+

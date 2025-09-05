@@ -1,0 +1,38 @@
+@use "../globals" as *;
+
+.navbar {
+  background-color: $app-bg-primary;
+  position: fixed;
+  width: 100%;
+  max-width: 1400px;
+  padding-right: 1.5rem;
+}
+
+.navbar a,
+.navbar .btn-container {
+  animation-name: fadeInUp;
+  animation-fill-mode: both;
+  animation-duration: 1s;
+}
+
+#nav-links {
+
+  a {
+    font-weight: 400;
+    letter-spacing: 1px;
+
+    &.active-link {
+      font-weight: 600;
+    }
+  }
+
+}
+
+.active-link {
+  background: $link-gradient;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  width: fit-content;
+  margin: auto;
+}

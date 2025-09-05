@@ -1,0 +1,10 @@
+export enum RecurringFrequency {
+    DAILY = "DAILY",
+    WEEKLY = "WEEKLY",
+    FORTNIGHTLY = "FORTNIGHTLY",
+    MONTHLY = "MONTHLY", 
+    QUARTERLY = "QUARTERLY",
+    HALFYEARLY = "HALFYEARLY",
+    YEARLY = "YEARLY", 
+    ON_DEMAND = "ON_DEMAND"
+}

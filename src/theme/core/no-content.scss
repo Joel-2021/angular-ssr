@@ -1,0 +1,40 @@
+@use "../globals" as *;
+
+.no-content-wrapper {
+  min-height: 79vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+
+  img {
+    animation-name: fadeIn;
+    animation-fill-mode: both;
+    animation-duration: 1.2s;
+    animation-delay: 0.1s;
+    margin: auto;
+  }
+
+  .no-content-title {
+    font-weight: 500;
+    margin: 10px 0 6px 0;
+    background: $link-gradient;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation-name: fadeInUp;
+    animation-fill-mode: both;
+    animation-duration: 1.2s;
+    animation-delay: 0.2s;
+  }
+
+  .no-content-desc {
+    font-size: 18px;
+    font-weight: 500;
+    animation-name: fadeInUp;
+    animation-fill-mode: both;
+    animation-duration: 1.2s;
+    animation-delay: 0.3s;
+  }
+}

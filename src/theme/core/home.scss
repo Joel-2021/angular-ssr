@@ -1,0 +1,104 @@
+#home {
+  scroll-margin-top: 10rem;
+  margin-top: 5rem;
+}
+
+.hero-section h1,
+.hero-section p,
+.hero-section .btn-container,
+.chottu-link-section h2,
+.chottu-link-section p,
+.feature-section h2,
+.feature-section h3,
+.feature-section p,
+.resource-section h2,
+.resource-section p,
+.get-started h2,
+.get-started p,
+.get-started .custom-input {
+  animation-name: fadeInUp;
+  animation-fill-mode: both;
+  animation-duration: 1s;
+}
+
+.hero-section p {
+  animation-delay: 0.3s;
+}
+
+.hero-section img,
+.feature-section img,
+.resource-section img {
+  animation: blur 1000ms ease-in-out forwards;
+}
+
+@keyframes blur {
+
+  0% {
+    filter: blur(25px);
+  }
+  100% {
+    filter: blur(0px);
+  }
+}
+
+.hero-section .btn-container {
+  animation-delay: 0.45s;
+}
+
+.chottu-link-section h2 {
+  animation-delay: 0.58s;
+}
+
+.chottu-link-section p {
+  animation-delay: 0.65s;
+}
+
+.chottu-scroll-ani {
+  animation-name: fadeInUp;
+  animation-fill-mode: both;
+  animation-duration: 1s;
+}
+
+.chottu-scroll-ani p {
+  animation-delay: 0.2s;
+}
+
+.feature-section h2 {
+  animation-delay: 0.3s;
+}
+
+.feature-section h3,
+.feature-section p {
+  animation-delay: 0.4s;
+}
+
+.feature-section img {
+  animation-name: fadeIn;
+  animation-fill-mode: both;
+  animation-duration: 1s;
+  animation-delay: 0.55s;
+}
+
+.resource-section p {
+  animation-delay: 0.2s;
+}
+
+.resource-section img {
+  animation-name: fadeIn;
+  animation-fill-mode: both;
+  animation-duration: 1s;
+  animation-delay: 0.3s;
+
+}
+
+.get-started h2 {
+  animation-delay: 0.38s;
+}
+
+.get-started p {
+  animation-delay: 0.45s;
+}
+
+.get-started.custom-input {
+  animation-delay: 0.45s;
+}

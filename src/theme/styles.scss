@@ -1,0 +1,97 @@
+/* You can add global styles to this file, and also import other style files */
+
+@use 'animate.css';
+
+@use "./globals" as *;
+
+@use "./plugins/material.scss";
+@use "./plugins/notyf.scss";
+@use "./core/buttons.scss";
+@use "./core/dialogs.scss";
+@use "./core/card.scss";
+@use "./core/header.scss";
+@use "./core/no-content.scss";
+@use "./core/home.scss";
+
+app-root {
+  opacity: 0;
+  //transition: opacity 0.3s ease-in-out;
+}
+
+app-root.loaded {
+  opacity: 1;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: $app-bg-primary;
+  color: $app-text-primary;
+  max-width: $responsive-width;
+  margin: auto;
+  padding: 1rem;
+  font-family: "Poppins", sans-serif;
+  background-image: url('../assets/images/background.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+p,
+table {
+  font-family: "Quicksand", sans-serif;
+  font-weight: 400;
+}
+
+table {
+  font-weight: 500;
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+/* Override Tailwind's reset */
+.client-content {
+
+  p {
+    margin-bottom: 1rem;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-size: revert;
+    font-weight: revert;
+    margin-bottom: revert;
+    font-family: "Quicksand", sans-serif;
+  }
+
+  ul {
+    list-style: revert;
+    margin: revert;
+    padding: revert;
+  }
+
+  a {
+    color: #006ae6;
+    text-decoration: underline;
+  }
+}
+
+.main-layout {
+  margin-top: 6rem;
+  min-height: 79vh;
+}
+
+.spinner-container {
+  min-height: 79vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+

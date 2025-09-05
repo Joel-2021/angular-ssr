@@ -1,0 +1,25 @@
+@use '@angular/material' as mat;
+@use '../globals' as *;
+
+@include mat.core();
+
+html {
+  color-scheme: dark;
+  @include mat.theme((
+    color: (
+      theme-type: dark,
+      primary: mat.$azure-palette
+    ),
+    typography: "Poppins",
+    density: -2
+  ));
+}
+
+.mat-mdc-form-field {
+
+  width: 100%;
+}
+
+.mdc-notched-outline__notch {
+  border-right-style: hidden;
+}

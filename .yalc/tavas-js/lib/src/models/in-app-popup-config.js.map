@@ -1,0 +1,1 @@
+{"version":3,"file":"in-app-popup-config.js","sourceRoot":"","sources":["../../../src/models/in-app-popup-config.ts"],"names":[],"mappings":"","sourcesContent":["export interface InAppPopupConfig {\n    popupBg: string\n    closeBtnBg: string\n}\n"]}

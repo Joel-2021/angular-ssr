@@ -1,0 +1,9 @@
+{
+  "version": "v1",
+  "packages": {
+    "tavas-js": {
+      "signature": "c2722b5a4b5dcc86e54628a2132aefa3",
+      "file": true
+    }
+  }
+}

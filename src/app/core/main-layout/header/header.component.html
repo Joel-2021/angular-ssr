@@ -1,0 +1,66 @@
+<nav class="top-0 z-50 navbar">
+  <div class="flex flex-wrap lg:flex-nowrap items-center mx-auto py-4 justify-between lg:justify-normal lg:gap-x-10">
+    <a [routerLink]="AppRoutes.HOME" class="flex items-center shrink-0 space-x-3 rtl:space-x-reverse" id="logo-link">
+      <img ngSrc="./assets/images/brands/logo.webp" class="h-8" alt="Chottu link Logo" height="32" width="135"/>
+    </a>
+
+    <button type="button" (click)="toggleMenu()"
+            class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+            aria-controls="navbar-default" [attr.aria-expanded]="isMenuOpen">
+      <span class="sr-only">Open main menu</span>
+      <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M1 1h15M1 7h15M1 13h15"/>
+      </svg>
+    </button>
+
+    <div [ngClass]="{'hidden': !isMenuOpen,'flex': isMenuOpen}"
+         class="w-full flex-col lg:flex lg:flex-row lg:items-center lg:justify-between lg:gap-x-10 lg:!flex"
+         id="navbar-default">
+
+      <ul id="nav-links"
+          class="font-medium text-center flex flex-col p-4 lg:p-0 lg:flex-row lg:space-x-8 rtl:space-x-reverse lg:mt-0">
+        <li>
+          <a [routerLink]="AppRoutes.HOME"
+             [class.active-link]="activeSection === 'home' && currentRoute === AppRoutes.HOME"
+               class="block py-2 px-3 lg:p-0 active-link" data-close-menu>
+            Home
+          </a>
+        </li>
+
+        <li>
+          <a [routerLink]="AppRoutes.WHY_CHOTTULINK" class="block py-2 px-3 lg:p-0"
+               [class.active-link]="activeSection === 'why-chottulink'" data-close-menu>
+            Why ChottuLink?
+          </a>
+        </li>
+
+        <li>
+          <a [routerLink]="AppRoutes.FEATURES" class="block py-2 px-3 lg:p-0"
+               [class.active-link]="activeSection === 'features'" data-close-menu>
+            Features
+          </a>
+        </li>
+
+        <li>
+          <a class="block py-2 px-3 lg:p-0" data-close-menu [href]="docsLink" target="_blank">
+            Developer Guide
+          </a>
+        </li>
+
+        <li>
+          <a (click)="updateCurrentRoute()" [routerLink]="AppRoutes.PRICING" routerLinkActive="active-link"
+             class="block py-2 px-3 lg:p-0" data-close-menu>
+            Pricing
+          </a>
+        </li>
+      </ul>
+
+      <div class="flex items-center gap-x-4 justify-around btn-container">
+        <button mat-flat-button class="btn-gradient shimmer animate" data-close-menu (click)="navigateToDashboard()">
+          Dashboard
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>

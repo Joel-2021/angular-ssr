@@ -1,0 +1,33 @@
+import { Tavas } from '../posthog-core';
+import { DecideResponse, Properties } from '../types';
+import type { record } from '../../rrweb/typings';
+import type { eventWithTime, listenerHandler } from '../../rrweb/typings/types';
+export declare const FULL_SNAPSHOT_EVENT_TYPE = 2;
+export declare const META_EVENT_TYPE = 4;
+export declare const INCREMENTAL_SNAPSHOT_EVENT_TYPE = 3;
+export declare const PLUGIN_EVENT_TYPE = 6;
+export declare const MUTATION_SOURCE_TYPE = 0;
+export declare class SessionRecording {
+    instance: Tavas;
+    captureStarted: boolean;
+    snapshots: any[];
+    emit: boolean;
+    endpoint: string;
+    stopRrweb: listenerHandler | undefined;
+    windowId: string | null;
+    sessionId: string | null;
+    receivedDecide: boolean;
+    rrwebRecord: typeof record | undefined;
+    constructor(instance: Tavas);
+    startRecordingIfEnabled(): void;
+    started(): boolean;
+    stopRecording(): void;
+    isRecordingEnabled(): boolean;
+    isConsoleLogCaptureEnabled(): boolean;
+    afterDecideResponse(response: DecideResponse): void;
+    startCaptureAndTrySendingQueuedSnapshots(): void;
+    _startCapture(): void;
+    _updateWindowAndSessionIds(event: eventWithTime): void;
+    _onScriptLoaded(): void;
+    _captureSnapshot(properties: Properties): void;
+}
