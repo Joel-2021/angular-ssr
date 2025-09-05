@@ -5,7 +5,7 @@ export enum AppRoutes {
   WHY_CHOTTULINK = '/why-chottulink',
   FEATURES = '/features',
   PRICING = '/pricing',
-  TERMS_OF_USE = '/legal/terms-of-service',
+  TERMS_OF_USE = '/legal/terms-of-use',
   PRIVACY_POLICY = '/legal/privacy-policy',
   REFUND_POLICY = '/legal/refund-policy',
 

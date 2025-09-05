@@ -17,6 +17,6 @@ export const environment = {
     host: 'https://dev-env-1.tavas.ai',
     isEnabled: true,
   },
-  useHash: true,
+  useHash: false,
   version: version,
 };
