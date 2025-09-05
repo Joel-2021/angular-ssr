@@ -163,21 +163,20 @@
         </div>
       </div>
 
+<!--      <icon src="./assets/images/icons/question.svg" size="18"-->
+<!--            #tooltip="matTooltip"-->
+<!--            matTooltip="ChottuLink calculates Monthly Active Users (MAU) based on the number of unique users who-->
+<!--                 have opened the app at least once, from the 1st to the last day of each month, based on UTC. The MAUs shown on chottuLink would be roughly similar to the MAUs you get to see in your Google Analytics/Firebase."-->
+<!--            (click)="tooltip.toggle()"-->
+<!--            [matTooltipPosition]="tooltipPosition"></icon>-->
       <div class="mt-32 md:mt-40">
         <h1 class="text-3xl sm:text-4xl font-bold mb-10">
           Transparent Pricing that doesn't make you think twice.
         </h1>
         <div class="p-4 rounded-2xl text-start sm:p-10 border-2 border-gray-400">
-          @if (isBrowser) {
             <p class="sm:text-lg" >How many monthly active users?
-              <icon src="./assets/images/icons/question.svg" size="18" ngSkipHydration
-                    #tooltip="matTooltip"
-                    matTooltip="ChottuLink calculates Monthly Active Users (MAU) based on the number of unique users who
-                 have opened the app at least once, from the 1st to the last day of each month, based on UTC. The MAUs shown on chottuLink would be roughly similar to the MAUs you get to see in your Google Analytics/Firebase."
-                    (click)="tooltip.toggle()"
-                    [matTooltipPosition]="tooltipPosition"></icon>
+              <icon src="./assets/images/icons/question.svg" size="18"></icon>
             </p>
-          }
 
           <div class="relative w-full pb-6 px-3 md:px-0 pt-5">
             <mat-slider class="w-full! m-0!" min="0" [max]="maxMau" discrete [displayWith]="formatLabel" step="50000">
@@ -218,8 +217,73 @@
             </div>
           </div>
 
-          <h6 class="mt-10 text-tertiary">ChottuLink pricing doesn't multiply as your MAUs grow,
+          <h6 class="mt-10 text-tertiary font-secondary">ChottuLink pricing doesn't multiply as your MAUs grow,
             We ensure you never get a surprise bill.</h6>
+        </div>
+
+        <div class="mt-20 md:mt-32">
+          <h2 class="text-3xl sm:text-4xl font-bold mb-10 text-center">ChottuLink Features</h2>
+          <div class="w-full">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+              <div class="feature-column">
+                <ul class="space-y-4 text-tertiary">
+                  <li class="flex items-start justify-center">
+                    <span class="text-green-400 mr-2">✓</span>
+                    <span>Seamless Deep Linking for Universal Compatibility</span>
+                  </li>
+                  <li class="flex items-start justify-center">
+                    <span class="text-green-400 mr-2">✓</span>
+                    <span>Effortless Switch from Firebase Dynamic Links</span>
+                  </li>
+                  <li class="flex items-start justify-center">
+                    <span class="text-green-400 mr-2">✓</span>
+                    <span>Hosted on highly scalable & reliable AWS infrastructure</span>
+                  </li>
+                  <li class="flex items-start justify-center">
+                    <span class="text-green-400 mr-2">✓</span>
+                    <span>Self-serve onboarding</span>
+                  </li>
+
+                </ul>
+              </div>
+              <div class="feature-column">
+                <ul class="space-y-4 text-tertiary">
+                  <li class="flex items-start justify-center">
+                    <span class="text-green-400 mr-2">✓</span>
+                    <span>Deferred Deeplinking fully supported</span>
+                  </li>
+                  <li class="flex items-start justify-center">
+                    <span class="text-green-400 mr-2">✓</span>
+                    <span>Custom domain support</span>
+                  </li>
+                  <li class="flex items-start justify-center">
+                    <span class="text-green-400 mr-2">✓</span>
+                    <span>Unlimited Deep Links</span>
+                  </li>
+                  <li class="flex items-start justify-center">
+                    <span class="text-green-400 mr-2">✓</span>
+                    <span>Unlimited Clicks & QR Codes</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="feature-column">
+                <ul class="space-y-4 text-tertiary">
+                  <li class="flex items-start justify-center">
+                    <span class="text-green-400 mr-2">✓</span>
+                    <span>Rest APIs Support</span>
+                  </li>
+                  <li class="flex items-start justify-center">
+                    <span class="text-green-400 mr-2">✓</span>
+                    <span>Advanced Analytics for Deep Linking</span>
+                  </li>
+                  <li class="flex items-start justify-center">
+                    <span class="text-green-400 mr-2">✓</span>
+                    <span>SDKs for Android, iOS, Flutter, React Native and Unity</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     } @else {
