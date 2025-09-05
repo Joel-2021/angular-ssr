@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-
+@use "tailwindcss";
 @use 'animate.css';
 
 @use "./globals" as *;
@@ -12,6 +12,7 @@
 @use "./core/header.scss";
 @use "./core/no-content.scss";
 @use "./core/home.scss";
+
 
 app-root {
   opacity: 0;
